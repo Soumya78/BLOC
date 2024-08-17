@@ -2,7 +2,8 @@ import 'package:blocproject/api/actions/Loadaction.dart';
 import 'package:flutter/widgets.dart';
 
 @immutable class Loadpersonsaction implements Loadaction{
-  final Personurl personurl ;
+  final String url ;
+  final Personloader personloader ;
 
-  Loadpersonsaction({required this.personurl});
+  Loadpersonsaction({required this.personloader ,required this.url, });
 }

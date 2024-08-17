@@ -1,7 +1,8 @@
 import 'package:blocproject/api/actions/Loadaction.dart';
 import 'package:blocproject/api/actions/Loadpersonsaction.dart';
 import 'package:blocproject/bloc/personbloc.dart';
-import 'package:blocproject/state/fetchresultstate.dart';
+import 'package:blocproject/person/person.dart';
+
 import 'package:flutter/material.dart';
 
 
@@ -45,14 +46,14 @@ class _MyHomePageState extends State<MyHomePage> {
                     onPressed: () {
                       context
                           .read<Personbloc>()
-                          .add(Loadpersonsaction(personurl: Personurl.Person1));
+                          .add(Loadpersonsaction( personloader:getperson, url: Person1url,));
                     },
                     child: Text("Load json 1")),
                 TextButton(
                     onPressed: () {
                       context
                           .read<Personbloc>()
-                          .add(Loadpersonsaction(personurl: Personurl.Person2));
+                          .add(Loadpersonsaction(personloader: getperson,url: Person2url));
                     },
                     child: Text("Load json 2")),
               ],
